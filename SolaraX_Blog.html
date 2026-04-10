@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolaraX Energy - Solar Solutions for Punjab</title>
+    <meta name="description" content="Premium solar panel solutions in Punjab. Get expert advice on solar installation, subsidies, and savings.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #F97316;
+            --primary-green: #16A34A;
+            --primary-navy: #1E293B;
+            --light-bg: #F8FAFC;
+            --border-light: #E2E8F0;
+            --text-dark: #1E293B;
+            --text-gray: #64748B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            color: var(--primary-orange);
+            margin-right: 0.5rem;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* WhatsApp Sticky Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+            z-index: 99;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin: 3rem auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-orange) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: #15803d;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-orange);
+        }
+
+        .toc h2 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.5rem;
+            color: var(--primary-navy);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .toc-list a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Articles */
+        .article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .article h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-navy);
+            scroll-margin-top: 80px;
+        }
+
+        .article-meta {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .article h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        .article h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-navy);
+        }
+
+        .article p {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .article ul, .article ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article li {
+            margin-bottom: 0.6rem;
+        }
+
+        .article-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #F87C1D 100%);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-widget h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.5rem;
+            color: var(--primary-navy);
+            border-bottom: 2px solid var(--primary-orange);
+            padding-bottom: 1rem;
+        }
+
+        .widget-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .widget-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .widget-item a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .widget-item a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-navy);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--primary-orange);
+        }
+
+        .footer-section p {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: #E2E8F0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-orange);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .article {
+                padding: 1.5rem;
+            }
+
+            .article h1 {
+                font-size: 1.5rem;
+            }
+
+            .article h2 {
+                font-size: 1.2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="SolaraX_5kW_Landing_Page.html" class="logo"><i class="fas fa-sun logo-icon"></i>SolaraX Energy</a>
+            <nav>
+                <a href="SolaraX_5kW_Landing_Page.html"><i class="fas fa-home"></i> Home</a>
+                <a href="#articles"><i class="fas fa-book-open"></i> Articles</a>
+                <a href="SolaraX_Instagram_30Day_Plan.html"><i class="fab fa-instagram"></i> Social Plan</a>
+                <a href="https://wa.me/917777884416?text=Hi%20SolaraX%2C%20I%20want%20a%20free%20solar%20quote" target="_blank" style="background:#16A34A; color:white; padding:8px 16px; border-radius:6px;"><i class="fab fa-whatsapp"></i> Free Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/917777884416" class="whatsapp-btn" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Solar Solutions for Punjab Homes</h1>
+            <p>Expert guidance on solar panel installation, government subsidies, and maximizing your savings</p>
+            <a href="https://wa.me/917777884416" class="hero-cta"><i class="fab fa-whatsapp"></i> Get Free Quote</a>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Main Content -->
+            <main>
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h2><i class="fas fa-list"></i> Table of Contents</h2>
+                    <ul class="toc-list">
+                        <li><a href="#article1">5kW Solar System Price in Punjab 2026</a></li>
+                        <li><a href="#article2">PM Surya Ghar Yojana Punjab — Apply Now for ₹78,000 Subsidy</a></li>
+                        <li><a href="#article3">Solar Panel Installation in Ludhiana — Step by Step</a></li>
+                        <li><a href="#article4">How Much Can You Save with Solar in Punjab?</a></li>
+                        <li><a href="#article5">Best Solar Brands in India 2026 — Adani vs Waaree vs Tata</a></li>
+                        <li><a href="#article6">Solar Panel Maintenance Guide for Punjab Homes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Article 1 -->
+                <article class="article" id="article1">
+                    <h1>5kW Solar System Price in Punjab 2026</h1>
+                    <div class="article-meta"><i class="fas fa-calendar"></i> Updated: April 2026 | <i class="fas fa-clock"></i> 5 min read</div>
+
+                    <h2>Understanding Solar System Costs in Punjab</h2>
+                    <p>The cost of a 5kW solar system in Punjab has become increasingly affordable in 2026. For a typical residential installation, homeowners can expect to invest between 3,00,000 to 4,50,000 for a complete on-grid system, including panels, inverter, wiring, and installation charges. With government subsidies and tax benefits, the effective investment can be reduced significantly, making solar an attractive long-term financial decision for homeowners concerned about rising electricity costs.</p>
+
+                    <h2>Factors Affecting Solar Prices</h2>
+                    <h3>1. Quality of Solar Panels</h3>
+                    <p>Premium brands like Tata, Adani, and Waaree command higher prices but offer superior warranty and efficiency ratings. Budget-friendly options from Chinese manufacturers can reduce upfront costs by 25-30%, though they may have shorter warranty periods and slightly lower efficiency ratings that impact long-term savings.</p>
+
+                    <h3>2. Inverter Type</h3>
+                    <p>String inverters range from 80,000-1,20,000, while micro-inverters cost more but provide better monitoring and efficiency. Hybrid inverters suitable for battery backup are priced higher but offer energy independence during power outages, increasingly popular in Punjab during peak summer months.</p>
+
+                    <h3>3. Installation Complexity</h3>
+                    <p>Roof conditions, electrical modifications, and structural work can impact final costs. Flat roofs require minimal additional work, while sloped roofs may need custom mounting solutions. Concrete roof reinforcement or additional structural assessment can add 10-15% to installation costs but ensures long-term safety.</p>
+
+                    <h2>Government Subsidies in Punjab</h2>
+                    <p>The PM Surya Ghar Yojana provides substantial subsidies reducing your net investment by 30-40%. After availing subsidies and tax benefits, your effective cost drops to approximately 1,80,000-2,70,000, making a 5kW system accessible to most middle-class households across Punjab's urban and rural areas.</p>
+
+                    <h2>Price Comparison</h2>
+                    <p>A 5kW system generates approximately 20-22 units of electricity daily in Punjab's climate, saving 2,000-2,500 monthly on electricity bills. ROI period typically ranges from 4-6 years, with 25+ years of system lifespan, ensuring decades of clean energy generation and continued savings throughout the system's operational life.</p>
+
+                    <a href="https://wa.me/917777884416?text=I%20want%20to%20know%20more%20about%205kW%20solar%20pricing" class="article-cta"><i class="fab fa-whatsapp"></i> Get Free Quote on WhatsApp</a>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article" id="article2">
+                    <h1>PM Surya Ghar Yojana Punjab — Apply Now for ₹78,000 Subsidy</h1>
+                    <div class="article-meta"><i class="fas fa-calendar"></i> Updated: April 2026 | <i class="fas fa-clock"></i> 6 min read</div>
+
+                    <h2>What is PM Surya Ghar Yojana?</h2>
+                    <p>The Prime Minister's Surya Ghar Yojana is a flagship government initiative designed to promote residential rooftop solar systems across India. Punjab residents can now apply for subsidies up to 78,000 for a 5kW system installation, making solar energy accessible to every household. This transformative scheme has already benefited over 2 million households nationwide and continues expanding with enhanced subsidy amounts and simplified application procedures.</p>
+
+                    <h2>Eligibility Criteria</h2>
+                    <h3>Who Can Apply?</h3>
+                    <p>Residential homeowners with a valid electricity connection from a licensed distribution company can apply. The scheme covers urban and rural areas across Punjab. Properties must have adequate roof space of at least 30 square meters for a 5kW system. Government employees, pensioners, and self-employed professionals are equally eligible to participate in the scheme.</p>
+
+                    <h3>Income Requirements</h3>
+                    <p>There are no specific income restrictions. However, properties with lower property values or in certain blocks get prioritized. The scheme is universal and designed for all economic sections of society, from lower-income groups to upper-middle-class families seeking energy independence and cost reduction.</p>
+
+                    <h2>Subsidy Distribution</h2>
+                    <h3>Tier 1: 0-1kW</h3>
+                    <p>Eligible for 40% subsidy, maximum 40,000. This covers basic lighting and fan requirements for small households, making it ideal for apartments and compact homes with limited roof space but wanting to contribute to renewable energy adoption.</p>
+
+                    <h3>Tier 2: 1-2kW</h3>
+                    <p>Eligible for 40% subsidy, maximum 50,000. Suitable for small homes with moderate electrical requirements including fans, lights, and basic appliances. This tier is popular among families in tier-2 cities and semi-urban areas across Punjab.</p>
+
+                    <h3>Tier 3: 2-10kW</h3>
+                    <p>Eligible for 20% subsidy or fixed amount as per guidelines, maximum 78,000 for 5kW systems. This is the most popular tier for residential installations, covering comprehensive household electricity needs from air conditioning to refrigeration and entertainment systems.</p>
+
+                    <h2>How to Apply Online</h2>
+                    <p>Visit the official PM Surya Ghar Yojana portal, register your property details, and submit necessary documents including land ownership proof, electricity bill, and government-issued ID. Processing typically takes 30-45 days after submission. After approval, you can select from authorized installers and proceed with system installation at subsidized rates.</p>
+
+                    <a href="https://wa.me/917777884416?text=Help%20me%20apply%20for%20PM%20Surya%20Ghar%20subsidy" class="article-cta"><i class="fab fa-whatsapp"></i> Get Free Quote on WhatsApp</a>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article" id="article3">
+                    <h1>Solar Panel Installation in Ludhiana — Step by Step</h1>
+                    <div class="article-meta"><i class="fas fa-calendar"></i> Updated: April 2026 | <i class="fas fa-clock"></i> 7 min read</div>
+
+                    <h2>The Complete Solar Installation Process</h2>
+                    <p>Installing a solar system in Ludhiana involves multiple stages from initial site survey to final grid connection. Understanding each step helps you make informed decisions and ensures a smooth installation experience. Ludhiana's urban infrastructure and distributed power grid present unique considerations that experienced installers navigate expertly.</p>
+
+                    <h2>Step 1: Site Assessment and Quotation</h2>
+                    <h3>On-Site Evaluation</h3>
+                    <p>Our team conducts a comprehensive roof survey examining structural capacity, shading patterns, and optimal panel placement. We analyze 15 years of weather data specific to Ludhiana location to calculate accurate energy generation projections. Drone surveys identify potential shading from nearby buildings, trees, and structures during different seasons.</p>
+
+                    <h3>Customized Quotation</h3>
+                    <p>Based on assessment, we provide detailed quotations showing system size, component specifications, pricing, subsidy eligibility, and expected ROI timeline. Transparent pricing breakdowns include equipment costs, labor charges, and applicable taxes, ensuring no hidden charges or surprise expenses during installation.</p>
+
+                    <h2>Step 2: Documentation and Approval</h2>
+                    <p>We assist with PM Surya Ghar Yojana application, load check requests from distribution companies, and grid connection approvals. This typically takes 15-30 days. Our team handles all paperwork, follow-ups with authorities, and obtains necessary NOC from local bodies, streamlining the bureaucratic process considerably.</p>
+
+                    <h2>Step 3: Equipment Procurement</h2>
+                    <p>Once approvals are obtained, we source quality components from authorized distributors. All equipment comes with manufacturer warranties and performance guarantees. We maintain relationships with top-tier suppliers to ensure you receive genuine, high-quality components at the best available prices.</p>
+
+                    <h2>Step 4: Installation</h2>
+                    <h3>Structural Work</h3>
+                    <p>Installation team prepares mounting structures, ensuring proper angles for maximum sunlight exposure during winter and summer months. All mounting hardware is galvanized to resist Punjab's weather extremes and prevent corrosion over decades of operation.</p>
+
+                    <h3>Panel Installation</h3>
+                    <p>High-efficiency solar panels are mounted securely with industry-standard fixings designed to withstand Punjab's wind and weather conditions. Each panel is individually tested before mounting to ensure zero manufacturing defects or performance issues.</p>
+
+                    <h3>Electrical Connections</h3>
+                    <p>Inverter, monitoring systems, and safety switches are installed following all electrical safety codes. Proper earthing ensures maximum safety. All wiring is color-coded and properly labeled for future maintenance and troubleshooting by technicians.</p>
+
+                    <h2>Step 5: Testing and Commissioning</h2>
+                    <p>Comprehensive testing verifies system functionality, safety compliance, and proper synchronization with the grid. Your monitoring app is activated for real-time generation tracking. We provide thorough training on monitoring systems and routine maintenance requirements for optimal long-term performance.</p>
+
+                    <a href="https://wa.me/917777884416?text=I%20want%20to%20schedule%20a%20site%20visit" class="article-cta"><i class="fab fa-whatsapp"></i> Get Free Quote on WhatsApp</a>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article" id="article4">
+                    <h1>How Much Can You Save with Solar in Punjab?</h1>
+                    <div class="article-meta"><i class="fas fa-calendar"></i> Updated: April 2026 | <i class="fas fa-clock"></i> 6 min read</div>
+
+                    <h2>Real Savings Calculator for Punjab Homeowners</h2>
+                    <p>Punjab receives an average of 5.5 peak sun hours daily, making it one of India's most ideal locations for solar installations. A typical 5kW system can generate 20-25 units daily, translating to substantial savings. With consistent sunlight throughout the year and minimal rainy days, Punjab's geography is perfectly suited for maximizing solar energy generation and financial returns.</p>
+
+                    <h2>Monthly Savings Breakdown</h2>
+                    <h3>Current Electricity Rates in Punjab</h3>
+                    <p>Punjab's domestic electricity tariff averages 8-12 per unit, varying based on consumption slabs. Higher consumption pushes you to upper slabs with increased per-unit costs. Slabs typically range from 5-12 per unit, with the highest rates for consumption exceeding 300 units monthly, common in air-conditioned homes during peak summer.</p>
+
+                    <h3>5kW System Production</h3>
+                    <p>A 5kW system generates approximately 100-110 units monthly in Punjab's climate. At current rates, this translates to 800-1,320 monthly savings or 9,600-15,840 annually. Over 25 years without accounting for inflation, cumulative savings reach 2.4 to 3.96 lakh rupees in electricity costs alone.</p>
+
+                    <h2>Long-term Savings Over 25 Years</h2>
+                    <h3>Without Inflation Adjustment</h3>
+                    <p>Total savings: 2,40,000 to 3,96,000 over system lifespan. This assumes constant electricity rates without annual increase. Conservative estimates based on current tariff structures and average system performance in Punjab's climate conditions.</p>
+
+                    <h3>With Annual Electricity Rate Increase</h3>
+                    <p>Electricity rates typically increase 5-7% annually. Accounting for inflation, your 25-year savings could reach 4,50,000-6,00,000, providing superior inflation protection. Solar energy locks in your energy costs, protecting against future rate hikes that continue rising annually across all states.</p>
+
+                    <h2>Additional Financial Benefits</h2>
+                    <h3>Tax Benefits</h3>
+                    <p>Under Section 80 of Income Tax Act, you can claim depreciation benefits on solar equipment. Additional tax deductions available in some states. Accelerated depreciation benefits of 40% in first year available for rooftop solar systems under government schemes.</p>
+
+                    <h3>Net Metering Credits</h3>
+                    <p>Excess generation is sent to the grid, and you receive credits at 90% of average consumption rate. During monsoon months when generation decreases, you can utilize these credits. Virtual banking ensures no credit expires and can be carried forward indefinitely.</p>
+
+                    <h3>Property Value Increase</h3>
+                    <p>Homes with solar installations command 3-5% higher property values, recognized by buyers as long-term asset improvements. Solar-equipped homes also sell faster, with reduced negotiation on price due to increased buyer interest in energy-efficient properties.</p>
+
+                    <a href="https://wa.me/917777884416?text=Calculate%20my%20solar%20savings" class="article-cta"><i class="fab fa-whatsapp"></i> Get Free Quote on WhatsApp</a>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article" id="article5">
+                    <h1>Best Solar Brands in India 2026 — Adani vs Waaree vs Tata</h1>
+                    <div class="article-meta"><i class="fas fa-calendar"></i> Updated: April 2026 | <i class="fas fa-clock"></i> 8 min read</div>
+
+                    <h2>Comparing India's Top Solar Panel Manufacturers</h2>
+                    <p>Choosing the right solar brand is crucial for system longevity and performance. We compare three market leaders that dominate Indian residential installations, each offering unique advantages for different customer priorities and budgets.</p>
+
+                    <h2>Adani Solar</h2>
+                    <h3>Overview</h3>
+                    <p>Adani Solar is India's largest solar manufacturer with state-of-the-art production facilities in Gujarat. Their panels are known for consistent performance and reliability. With over 4 GW installed capacity and serving over 100,000 customers across India, Adani maintains industry-leading quality standards and manufacturing processes.</p>
+
+                    <h3>Panel Efficiency</h3>
+                    <p>Modern Adani modules achieve 21-22% efficiency ratings, competitive with global standards. Their half-cut cell technology improves shading tolerance. Advanced manufacturing processes minimize internal resistance losses, translating to better performance in real-world conditions and challenging weather.</p>
+
+                    <h3>Warranty</h3>
+                    <p>25-year linear performance warranty guarantees 80% output after 25 years. 10-year product warranty covers manufacturing defects. Extended warranties available for premium products. Claims processing is fast and hassle-free through their pan-India service network.</p>
+
+                    <h3>Price Range</h3>
+                    <p>18,000-22,000 per kW capacity, offering good value for Indian residential segment. Pricing competitive with international brands at lower cost points. Volume discounts available for larger installations and bulk orders from residential colonies.</p>
+
+                    <h2>Waaree Renewable Technologies</h2>
+                    <h3>Overview</h3>
+                    <p>Waaree manufactures high-efficiency panels with two facilities producing 2GW capacity annually. Strong focus on cutting-edge technology and sustainability. Founded in 1989, Waaree is among India's oldest solar manufacturers with proven track record and customer satisfaction ratings.</p>
+
+                    <h3>Panel Efficiency</h3>
+                    <p>Premium models achieve 22-23% efficiency with mono-crystalline cells. Their bifacial panels can generate 10-20% additional output through rear surface albedo. Advanced cell technologies and manufacturing minimize degradation, ensuring superior long-term performance compared to competitors.</p>
+
+                    <h3>Warranty</h3>
+                    <p>25-year linear performance warranty with quarterly testing and verification. Industry-leading customer service with pan-India service centers. Dedicated customer support hotlines and local representatives ensure quick resolution of any issues or concerns.</p>
+
+                    <h3>Price Range</h3>
+                    <p>20,000-24,000 per kW capacity. Premium pricing justified by superior efficiency and warranty support. Excellent for long-term investment perspective. Price includes comprehensive post-sale support and maintenance packages beneficial for aging systems.</p>
+
+                    <h2>Tata Power Solar</h2>
+                    <h3>Overview</h3>
+                    <p>Tata Power Solar leverages the Tata Group's engineering heritage and manufacturing excellence. Established reputation with robust domestic distribution network. Part of the Tata Group's sustainability initiatives, committed to renewable energy growth across India and Southeast Asia.</p>
+
+                    <h3>Panel Efficiency</h3>
+                    <p>Contemporary panels deliver 20-21% efficiency with reliable performance across temperature variations. Good tolerance to harsh environmental conditions. Temperature coefficient ensures stable performance during Punjab's extreme summer and winter temperature swings.</p>
+
+                    <h3>Warranty</h3>
+                    <p>25-year comprehensive warranty with dedicated customer care. Tata's brand trust translates to excellent after-sales support and spare part availability. Expedited warranty claims and local service centers ensure minimal downtime if issues arise.</p>
+
+                    <h3>Price Range</h3>
+                    <p>19,000-23,000 per kW capacity. Premium brand positioning with emphasis on quality and customer service reliability. Financing options available through Tata Capital for qualified customers, reducing upfront financial burden.</p>
+
+                    <h2>Recommendation for Punjab Homeowners</h2>
+                    <p>For optimal balance of performance, warranty, and cost-effectiveness in Punjab's climate, we recommend Waaree or Tata products. Both brands offer superior durability against dust and temperature variations specific to Punjab. Adani provides excellent value for budget-conscious homeowners without compromising quality standards. Evaluate based on your budget constraints and long-term performance expectations before finalizing your choice.</p>
+
+                    <a href="https://wa.me/917777884416?text=Which%20brand%20is%20best%20for%20my%20home" class="article-cta"><i class="fab fa-whatsapp"></i> Get Free Quote on WhatsApp</a>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article" id="article6">
+                    <h1>Solar Panel Maintenance Guide for Punjab Homes</h1>
+                    <div class="article-meta"><i class="fas fa-calendar"></i> Updated: April 2026 | <i class="fas fa-clock"></i> 5 min read</div>
+
+                    <h2>Maximizing Solar System Performance Through Proper Maintenance</h2>
+                    <p>Regular maintenance ensures your solar system operates at peak efficiency throughout its 25+ year lifespan. Punjab's weather patterns, including dust storms and monsoons, require specific maintenance strategies to preserve system performance and protect your investment effectively.</p>
+
+                    <h2>Monthly Maintenance Tasks</h2>
+                    <h3>Visual Inspection</h3>
+                    <p>Check panels for visible damage, accumulation of leaves, bird droppings, or dust. Inspect mounting structures for any loose fasteners or corrosion signs. Look for exposed wiring or water ingress around connections. Monthly inspections prevent small issues from becoming expensive problems requiring professional intervention.</p>
+
+                    <h3>Cleaning</h3>
+                    <p>Use soft brushes and distilled water to clean panel surfaces. Avoid abrasive materials that scratch the anti-reflective coating. Early morning or late evening cleaning prevents thermal stress from temperature differences. Regular cleaning in Punjab during dust season can improve efficiency by 15-20% compared to neglected panels.</p>
+
+                    <h2>Quarterly Checks</h2>
+                    <h3>Inverter Monitoring</h3>
+                    <p>Monitor daily generation data for inconsistencies. Check inverter display for error codes or warnings. Verify cooling fan operation to prevent overheating during peak summer months. Most modern inverters send alerts to your smartphone app when issues are detected, enabling proactive maintenance.</p>
+
+                    <h3>Electrical Connections</h3>
+                    <p>Inspect junction boxes, isolators, and switches for corrosion or looseness. Check earthing connections for proper functioning. Verify all wiring insulation integrity. Temperature variations cause thermal expansion and contraction, potentially loosening connections that require periodic retightening.</p>
+
+                    <h2>Annual Professional Maintenance</h2>
+                    <h3>Thermal Imaging</h3>
+                    <p>Professional thermal cameras identify underperforming cells or panels. This non-invasive technique spots internal defects before they cause significant output loss. Thermal imaging detects hot spots indicating potential fire hazards or internal short circuits.</p>
+
+                    <h3>System Performance Testing</h3>
+                    <p>Measure actual output versus expected generation. Analyze IV characteristics to identify module defects. Verify net metering accuracy with your distribution company. Professional testing provides documentation for warranty claims if performance drops unexpectedly.</p>
+
+                    <h2>Seasonal Precautions</h2>
+                    <h3>Monsoon Season</h3>
+                    <p>Water accumulation is minimal due to panel angles, but check for blocked drainage areas. Inspect all waterproofing seals around electrical boxes. Verify lightning protection systems are functional. Ensure proper grounding to dissipate potential lightning strikes safely.</p>
+
+                    <h3>Summer Peak</h3>
+                    <p>Ensure adequate ventilation behind panels for heat dissipation. Check inverter cooling systems. Monitor performance drops due to high temperature derating. Inverter performance degrades above 45 degrees Celsius, necessitating shade management or strategic vegetation placement.</p>
+
+                    <h3>Dust Storm Season</h3>
+                    <p>Post-storm cleaning is essential as Punjab experiences significant dust accumulation. Regular cleaning during March-May can improve generation by 15-20%. Dust particles block sunlight and reduce cell efficiency, making seasonal maintenance critical in Punjab's geography.</p>
+
+                    <h2>When to Call Professionals</h2>
+                    <p>Professional service is recommended for electrical troubleshooting, inverter repairs, and structural modifications. Annual professional inspection ensures warranty compliance and system longevity. Emergency support should be accessible 24/7 for system failures requiring immediate attention to resume energy generation.</p>
+
+                    <a href="https://wa.me/917777884416?text=Schedule%20maintenance%20for%20my%20system" class="article-cta"><i class="fab fa-whatsapp"></i> Get Free Quote on WhatsApp</a>
+                </article>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Recent Articles Widget -->
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-newspaper"></i> Recent Articles</h3>
+                    <div class="widget-item">
+                        <a href="#article1">5kW Solar System Price in Punjab 2026</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#article2">PM Surya Ghar Yojana — 78,000 Subsidy</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#article3">Installation in Ludhiana — Step by Step</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#article4">How Much Can You Save?</a>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Widget -->
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-headset"></i> Get Free Quote</h3>
+                    <p style="margin-bottom: 1rem; font-size: 0.95rem;">Connect with our solar experts for a customized solution.</p>
+                    <a href="https://wa.me/917777884416" style="display: block; background: #25D366; color: white; text-align: center; padding: 0.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-bottom: 0.8rem;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp +91-7777884416
+                    </a>
+                    <p style="font-size: 0.9rem; color: var(--text-gray); text-align: center;">Available 24/7 for inquiries</p>
+                </div>
+
+                <!-- Service Area Widget -->
+                <div class="sidebar-widget">
+                    <h3><i class="fas fa-map-marker-alt"></i> Service Areas</h3>
+                    <div class="widget-item">
+                        <a href="#">Ludhiana</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#">Amritsar</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#">Jalandhar</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#">Patiala</a>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#">Chandigarh</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SolaraX Energy</h3>
+                <p>We provide premium solar solutions tailored for Punjab homes. With over 5000+ successful installations, we're committed to making solar energy accessible and affordable for every household.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/917777884416" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/sustainablesolarsolutions786" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="SolaraX_5kW_Landing_Page.html"><i class="fas fa-home"></i> Main Website</a></p>
+                <p><a href="SolaraX_Instagram_30Day_Plan.html"><i class="fab fa-instagram"></i> Social Media Plan</a></p>
+                <p><a href="#article1">Pricing Guide</a></p>
+                <p><a href="#article2">Subsidy Information</a></p>
+                <p><a href="#article3">Installation Process</a></p>
+                <p><a href="#article4">Savings Calculator</a></p>
+                <p><a href="#article6">Maintenance Guide</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91-7777884416</p>
+                <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/917777884416">Chat Now</a></p>
+                <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://instagram.com/sustainablesolarsolutions786">@sustainablesolarsolutions786</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Service Areas:</strong> Ludhiana, Amritsar, Jalandhar, Patiala, and surrounding regions</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Why Choose Us</h3>
+                <p><i class="fas fa-check-circle" style="color: var(--primary-green);"></i> Government Subsidy Assistance</p>
+                <p><i class="fas fa-check-circle" style="color: var(--primary-green);"></i> Premium Brand Panels</p>
+                <p><i class="fas fa-check-circle" style="color: var(--primary-green);"></i> Lifetime Support</p>
+                <p><i class="fas fa-check-circle" style="color: var(--primary-green);"></i> 25-Year Warranty</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 SolaraX Energy. All rights reserved. | Making Punjab solar-powered, one home at a time.</p>
+        </div>
+    </footer>
+</body>
+</html>
